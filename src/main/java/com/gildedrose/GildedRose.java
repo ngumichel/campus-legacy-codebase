@@ -76,7 +76,7 @@ public class GildedRose {
                         }
                     } else {
                         items[i].quality = items[i].quality - items[i].quality;
-                        logger.info("Quality not changing because legendary item");
+                        logger.info("Backstage passes quality is equal to zero because outdated");
                     }
                 } else {
                     if (items[i].quality < 50) {
