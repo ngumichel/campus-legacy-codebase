@@ -47,7 +47,7 @@ public class GildedRose {
                         }
 
                         if (items[i].sellIn < 6) {
-                            logger.info("Increase backstage passes quality by an  another extra one because less than 6 days sellIn");
+                            logger.info("Increase backstage passes quality by an another extra one because less than 6 days sellIn");
                             if (items[i].quality < 50) {
                                 items[i].quality = items[i].quality + 1;
                             }
