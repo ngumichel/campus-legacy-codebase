@@ -2,8 +2,6 @@ package com.gildedrose;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.Arrays;
-
 public class GildedRose {
     Item[] items;
 
@@ -15,7 +13,7 @@ public class GildedRose {
 
     public void updateQuality() {
         for (int i = 0; i < items.length; i++) {
-            logger.debug(items[i].name + ", " + items[i].sellIn + ", " + items[i].quality);
+            logger.debug("Current item: " + items[i].name + ", " + items[i].sellIn + ", " + items[i].quality);
             if (!items[i].name.contains("Aged Brie")
                     && !items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
                 logger.info("Item is not a Brie or Passes");
@@ -91,10 +89,8 @@ public class GildedRose {
                     }
                 }
             }
+            logger.debug("Updated item: " + items[i].name + ", " + items[i].sellIn + ", " + items[i].quality);
         }
-
-
-
     }
 
     public Item[] getItems() {
