@@ -22,7 +22,7 @@ public class GildedRose {
                         logger.info("Decreasing item quality by one");
                         items[i].quality = items[i].quality - 1;
                     }
-                    if (items[i].name.contains("Conjured" ) && items[i].quality > 0) {
+                    if (items[i].name.contains("Conjured") && !items[i].name.contains("Like Conjured") && items[i].quality > 0) {
                         logger.info("Decreasing quality by an extra one because conjured");
                         items[i].quality = items[i].quality - 1;
                     }
@@ -33,7 +33,7 @@ public class GildedRose {
                     logger.info("Increase quality by one");
                     items[i].quality = items[i].quality + 1;
 
-                    if (items[i].name.contains("Conjured") && items[i].quality < 50) {
+                    if (items[i].name.contains("Conjured") && !items[i].name.contains("Like Conjured") && items[i].quality < 50) {
                         logger.info("Increase quality by an extra one because conjured");
                         items[i].quality = items[i].quality + 1;
                     }
@@ -69,7 +69,7 @@ public class GildedRose {
                                 logger.info("Decreasing item quality by one");
                                 items[i].quality = items[i].quality - 1;
                             }
-                            if (items[i].name.contains("Conjured" ) && items[i].quality > 0) {
+                            if (items[i].name.contains("Conjured") && !items[i].name.contains("Like Conjured") && items[i].quality > 0) {
                                 logger.info("Decreasing item quality by an extra one because conjured");
                                 items[i].quality = items[i].quality - 1;
                             }
@@ -83,7 +83,7 @@ public class GildedRose {
                         logger.info("Increase quality by another extra one because sellIn negative");
                         items[i].quality = items[i].quality + 1;
                     }
-                    if (items[i].name.contains("Conjured") && items[i].quality < 50) {
+                    if (items[i].name.contains("Conjured") && !items[i].name.contains("Like Conjured") && items[i].quality < 50) {
                         logger.info("Increase quality by another extra one because sellIn negative and conjured");
                         items[i].quality = items[i].quality + 1;
                     }
