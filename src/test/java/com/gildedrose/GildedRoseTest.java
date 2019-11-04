@@ -102,4 +102,20 @@ class GildedRoseTest {
         assertThat(app.items[0].quality).isEqualTo(14);
     }
 
+    @Test
+    void itemQualityShouldNeverBeNegative() {
+        Item[] items = new Item[] { new Item("Conjured", 5, 0) };
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertThat(app.items[0].quality).isEqualTo(0);
+    }
+
+    @Test
+    void itemQualityShouldNotBeOverFifty() {
+        Item[] items = new Item[] { new Item("Conjured Aged Brie", 5, 50) };
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertThat(app.items[0].quality).isEqualTo(50);
+    }
+
 }
