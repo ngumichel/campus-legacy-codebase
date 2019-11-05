@@ -62,9 +62,9 @@ public class GildedRose {
 
                 case "Red red wine":
                     logger.debug("Case Red Wine");
-                    item.quality += itemSellIn >= 300 ? 1 : 0;
-                    item.quality -= itemSellIn <= 0 ? 1 : 0;
                     item.sellIn  -= 1 ;
+                    item.quality += itemSellIn >= 300 ? 1 : 0;
+                    item.quality -= itemSellIn < 0 ? 1 : 0;
                     logger.debug("Item {} quality was {}, is now {}", itemName, itemQuality, item.quality);
                     break;
 
