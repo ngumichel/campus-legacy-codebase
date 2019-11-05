@@ -83,9 +83,8 @@ public class GildedRose {
                         }
                     }
                 }
-
-                logger.debug("Updated item: " + items[i].name + ", " + items[i].sellIn + ", " + items[i].quality);
             }
+            logger.debug("Updated item: " + items[i].name + ", " + items[i].sellIn + ", " + items[i].quality);
         }
     }
 
