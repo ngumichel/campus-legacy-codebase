@@ -118,4 +118,12 @@ class GildedRoseTest {
         assertThat(app.items[0].quality).isEqualTo(50);
     }
 
+    @Test
+    void itemShouldBeLegendary() {
+        Item[] items = new Item[] { new Item("item", 5, 60) };
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertThat(app.items[0].quality).isEqualTo(60);
+    }
+
 }
