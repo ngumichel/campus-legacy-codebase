@@ -112,7 +112,7 @@ class GildedRoseTest {
 
     @Test
     void itemQualityShouldNotBeOverFifty() {
-        Item[] items = new Item[] { new Item("Conjured Aged Brie", 5, 50) };
+        Item[] items = new Item[] { new Item("Aged Brie", 5, 50) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
         assertThat(app.items[0].quality).isEqualTo(50);
