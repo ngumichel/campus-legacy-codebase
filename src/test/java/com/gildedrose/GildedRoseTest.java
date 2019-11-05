@@ -142,4 +142,12 @@ class GildedRoseTest {
         assertThat(app.items[0].quality).isEqualTo(99);
     }
 
+    @Test
+    void wineQualityShouldBeTwoFifty() {
+        Item[] items = new Item[] { new Item("Red red wine", -99, 251) };
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertThat(app.items[0].quality).isEqualTo(250);
+    }
+
 }
