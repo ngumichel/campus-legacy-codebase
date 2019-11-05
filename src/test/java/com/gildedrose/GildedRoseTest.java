@@ -119,11 +119,27 @@ class GildedRoseTest {
     }
 
     @Test
-    void itemShouldBeLegendary() {
-        Item[] items = new Item[] { new Item("item", 5, 60) };
+    void wineQualityShouldIncreaseByOne() {
+        Item[] items = new Item[] { new Item("Red Wine", 500, 100) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
-        assertThat(app.items[0].quality).isEqualTo(60);
+        assertThat(app.items[0].quality).isEqualTo(101);
+    }
+
+    @Test
+    void wineQualityShouldNotIncrease() {
+        Item[] items = new Item[] { new Item("Red Wine", 200, 100) };
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertThat(app.items[0].quality).isEqualTo(100);
+    }
+
+    @Test
+    void wineQualityShouldDecreaseByOne() {
+        Item[] items = new Item[] { new Item("Red Wine", -100, 100) };
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertThat(app.items[0].quality).isEqualTo(99);
     }
 
 }
